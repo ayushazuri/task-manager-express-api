@@ -6,7 +6,7 @@ const app = express();
 const connectDB = require("./db/connector.js");
 require("dotenv").config();
 
-const PORT = Process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 
 //Middlewares
 app.use(express.json());
