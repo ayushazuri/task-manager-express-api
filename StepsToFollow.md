@@ -82,3 +82,48 @@
       	}
       };
       ```
+   3. Get a particular data:
+
+      - To get a particular data based on the ID, we can use `findOne(OBJECT)` which returns the document with the matching data as the provided object or null.
+
+      ```javascript
+      const getTask = async (req, res) => {
+      	try {
+      		const { id: taskID } = req.params;
+      		const task = await Task.findOne({ _id: taskID });
+      		if (!task)
+      			return res.status(404).json({ msg: `No task with id: ${taskID}` });
+
+      		res.status(200).json({ task });
+      	} catch (error) {
+      		res.status(500).json({ msg: error });
+      	}
+      };
+      ```
+
+   4. Delete a data
+
+      - To delete a data use `findOneAndDelete(OBJECT)`. Rest part is same as above.
+
+   5. Update a data using Patch:
+
+      - To Update a data, use `findOneAndUpdate(OBJECT, newData, OptionsForValidationOrOtherFeature)`. Here the Object will be the data wrt which you need to find the data in the collection, newData can be `req.body` which comes from the frontend, and options is used for various reasons, if you dont use it, the returned task will be the previous data only, not the updated one, so if you want to get the new data at that instant, use `new: true`, and `runValidators: true` can be used to check for null enteries.
+
+      ```javascript
+      const updateTasks = async (req, res) => {
+      	try {
+      		const { id: taskID } = req.params;
+      		const task = await Task.findOneAndUpdate({ _id: taskID }, req.body, {
+      			new: true,
+      			runValidators: true,
+      		});
+      		if (!task)
+      			return res.status(404).json({ msg: `No task with id: ${taskID}` });
+      		res.status(200).json({ task });
+      	} catch (error) {
+      		res.status(500).json({ msg: error });
+      	}
+      };
+      ```
+
+      - Difference between PUT and PATCH is that, PUT replaces the whole object with the new object but PATCH does an partial update, ie, it will replace the data that are new, and the previous datas will remain the same.
