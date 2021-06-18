@@ -6,7 +6,7 @@ const app = express();
 const connectDB = require("./db/connector.js");
 require("dotenv").config();
 
-const PORT = process.env.PORT || 5000;
+const PORT = Process.env.PORT || 5000;
 
 //Middlewares
 app.use(express.json());
@@ -21,7 +21,7 @@ const start = async () => {
 	try {
 		await connectDB(process.env.MONGO_URL);
 		app.listen(PORT, () => {
-			console.log(`Server is listening to http://localhost:${PORT}`);
+			console.log(`Server is listening to `);
 		});
 	} catch (err) {
 		console.log(err);
