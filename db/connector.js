@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
 const connectDB = (url) => {
-	console.log(typeof url.toString());
-	return mongoose.connect(url.toString(), {
+	// console.log(url);
+	return mongoose.connect(url, {
 		useNewUrlParser: true,
 		useCreateIndex: true,
 		useFindAndModify: false,
