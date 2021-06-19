@@ -2,11 +2,13 @@ const express = require("express");
 const tasks = require("./routes/tasks.js");
 const notFound = require("./middleware/not-found.js");
 const path = require("path");
-
+require("dotenv").config();
+// {
+// 	path: path.resolve(__dirname, "./.env");
+// }
 //Connections
 const app = express();
 const connectDB = require("./db/connector.js");
-require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
 
 const PORT = process.env.PORT || 5000;
 
