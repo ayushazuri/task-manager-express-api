@@ -5,19 +5,20 @@
 
 <p align="center"> 
    <a href="https://task-manager-express.herokuapp.com/" target="_blank">
-    <img src="./src/assets/Images/portfolio.png"></img>
+    <img src="./assets/task.png"></img>
   </a>
 </p>
 
 # Key Points 📋
+
 - This is an Express and Node.js App that can help you manage your tasks efficiently. It follows all the CRUD application.
-   - You can Create a new task.
-   - You can read all the tasks.
-   - You can update a task.
-   - You can delete a task as well.
+  - You can Create a new task.
+  - You can read all the tasks.
+  - You can update a task.
+  - You can delete a task as well.
 - This project used MongoDB as the database, to store all the datas and to create, read, update, and delete all the datas.
-- The REST API has been made using ExpressJS. The project is very modular and contains different routes, controllers, middlewares, model, and a connector. 
-- The Api Routes are as following: 
+- The REST API has been made using ExpressJS. The project is very modular and contains different routes, controllers, middlewares, model, and a connector.
+- The Api Routes are as following:
   - `/api/v1/tasks` - `get` method - To Read all the tasks present in the database.
   - `/api/v1/tasks` - `post` method - To Post a new task in the database.
   - `/api/v1/tasks/:id` - `get` method - to Get a particular task from the database, based on the id.
@@ -156,10 +157,11 @@
       - Difference between PUT and PATCH is that, PUT replaces the whole object with the new object but PATCH does an partial update, ie, it will replace the data that are new, and the previous datas will remain the same.
 
 # Deployment
-- This web app has been hosted on Heroku. 
+
+- This web app has been hosted on Heroku.
 - Install heroku `npm i -g heroku`. Then login heroku in your project `heroku login`.
 - Now you need to create a heroku project, you can either go to heroku website and make a project there, or just write in the terminal `heroku create project-name`.
-- Now You can have 2 options for deploying your web app on heroku. 
+- Now You can have 2 options for deploying your web app on heroku.
   - Add a heroku remote `heroku git:remote -a project-name`
   - Add and commit all the changes.
   - push the changes to your heroku remote. `git push heroku master`
