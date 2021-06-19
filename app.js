@@ -3,10 +3,7 @@ const tasks = require("./routes/tasks.js");
 const notFound = require("./middleware/not-found.js");
 const path = require("path");
 require("dotenv").config();
-// {
-// 	path: path.resolve(__dirname, "./.env");
-// }
-//Connections
+
 const app = express();
 const connectDB = require("./db/connector.js");
 
